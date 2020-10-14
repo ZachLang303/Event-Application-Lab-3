@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Lab2.Master.cs" Inherits="Lab3.Lab2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <%--Login Table--%>
+            <asp:Table ID="login" runat="server" Visible="true">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblUsername" runat="server" Text="Username"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Label ID="Label1" runat="server" Text="For Testing Purposes the Username is 'cis' and password is '484'" Font-Italic="true"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>                        
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>     
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CausesValidation="false"/>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnNewUser" runat="server" Text="New User" OnClick="btnNewUser_Click" CausesValidation="false"/>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell ColumnSpan="3">
+                        <asp:Label ID="lblLoginFeedback" runat="server" Text="" ForeColor="Red" Font-Bold="true"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table >
+
+            <%--Logout Table--%>
+            <asp:Table ID = "logout" runat="server" Visible="false">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblLoggedInUser" runat="server" Text=""></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" CausesValidation="false"/>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+
+
+            <%--Navigation Bar Table--%>
+            <asp:Table ID="navbar" runat="server" HorizontalAlign="Center" Style ="">
+                <asp:TableRow>
+                    <asp:TableCell ColumnSpan ="4" HorizontalAlign="Center" VerticalAlign="Top">
+                        <asp:Label ID="lblEventApplicationHeading" runat="server" Text="Event Application" Font-Names="Comic Sans MS" Font-Size="34px" Font-Bold="true"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell HorizontalAlign="Center" VerticalAlign="Middle">
+                         <asp:Button ID="btnMainMenu" runat="server" Text="Main Menu" Font-Size="X-Large" Width="200px" BackColor="#50C89D" BorderColor="#50C89D" CssClass="button"  OnClick="btnMainMenu_Click" CausesValidation="false"/>
+                    </asp:TableCell>
+                     <asp:TableCell HorizontalAlign = "Center" VerticalAlign="Middle">
+                         <asp:Button ID="btnRegisterEvent" runat="server" Text="Register Event" Font-Size="X-Large" Width="200px" BackColor="#50C89D" BorderColor="#50C89D" CssClass="button" OnClick="btnRegisterEvent_Click" CausesValidation="false"/>
+                     </asp:TableCell>
+                     <asp:TableCell HorizontalAlign = "Center" VerticalAlign="Middle">
+                         <asp:Button ID="btnAddStudent" runat="server" Text="Add Student" Font-Size="X-Large" Width="200px" BackColor="#50C89D" BorderColor="#50C89D" CssClass="button" OnClick="btnAddStudent_Click" CausesValidation="false"/>
+                     </asp:TableCell>
+                     <asp:TableCell HorizontalAlign = "Center" VerticalAlign="Middle">
+                         <asp:Button ID="btnEditStudent" runat="server" Text="Edit Student" Font-Size="X-Large" Width="200px" BackColor="#50C89D" BorderColor="#50C89D" CssClass="button" OnClick="btnEditStudent_Click" CausesValidation="false"/>
+                     </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+            <style type="text/css"> 
+                .button:hover {
+                    font-weight:bold;
+                }
+            </style>
+        </div>
+    </form>
+</body>
+</html>
